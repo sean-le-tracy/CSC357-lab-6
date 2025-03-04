@@ -32,7 +32,7 @@ int main(int argc, char *argv[]) {
         perror("fork failed");
         return 1;
     } else if (pid1 == 0) {
-        if (execl("evens.c", argv[1], (char *)NULL) == -1){
+        if (execl("evens.c", argv[1], NULL) == -1){
         perror("execl failed");
         exit(1);
         }
@@ -43,7 +43,7 @@ int main(int argc, char *argv[]) {
         perror("fork failed");
         return 1;
     } else if (pid2 == 0) {
-        if (execl("odds.c", argv[1], (char *)NULL) == -1){
+        if (execl("odds.c", argv[1], NULL) == -1){
         perror("execl failed");
         exit(1);
         }
