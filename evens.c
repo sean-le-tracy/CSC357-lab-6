@@ -21,6 +21,6 @@ int main(int argc, char *argv[]) {
     }
 
     for (int i = 2; i <= val; i += 2) {
-        printf("%d\n", i);
+        printf("\t%d\n", i);
     }
 }
