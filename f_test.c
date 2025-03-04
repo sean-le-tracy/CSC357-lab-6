@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include<sys/resource.h>
 #include<sys/types.h>
+#include<sys/wait.h>
 
 
 void limit_fork(rlim_t max_procs)
