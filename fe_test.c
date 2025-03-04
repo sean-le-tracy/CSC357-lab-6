@@ -32,9 +32,10 @@ int main(int argc, char *argv[]) {
         perror("fork failed");
         return 1;
     } else if (pid1 == 0) {
-        execl("evens.c", argv[1], (char *)NULL);
+        if (execl("evens.c", argv[1], (char *)NULL) == -1){
         perror("execl failed");
         exit(1);
+        }
     }
 
     pid_t pid2 = fork();
@@ -42,9 +43,10 @@ int main(int argc, char *argv[]) {
         perror("fork failed");
         return 1;
     } else if (pid2 == 0) {
-        execl("odds.c", argv[1], (char *)NULL);
+        if (execl("odds.c", argv[1], (char *)NULL) == -1){
         perror("execl failed");
         exit(1);
+        }
     }
 
     waitpid(pid1, NULL, 0);
