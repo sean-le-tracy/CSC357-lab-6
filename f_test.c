@@ -32,7 +32,7 @@ limit_fork(50);
 pid_t pid = fork();
 
     char *ptr;
-    long val = strtol(argv[1], &ptr, 12);
+    long val = strtol(argv[1], &ptr, 10);
 
     if (*ptr != '\0') {
         printf("please enter an integer\n");
