@@ -48,12 +48,12 @@ pid_t pid = fork();
         perror("fork failed");
         return 1;
     } else if (pid == 0) {
-        for (int i = 1; i < val; i += 2) {
+        for (int i = 1; i < val-1; i += 2) {
             printf("%d\n", i);
         }
         exit(0);
     } else {
-        for (int i = 2; i < val; i += 2) {
+        for (int i = 2; i < val-1; i += 2) {
             printf("\t%d\n", i);
         }
         wait(NULL);
